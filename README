@@ -1,0 +1,31 @@
+== CopyToProductionHelper MT Plugin
+
+ステージング環境のエントリを、本番環境に未公開コピーするMovableTypeプラグイン。
+
+MTを運用している環境において、ステージング環境と本番環境を分けている場合、ステージングで投稿した記事を
+ワンクリックで本番環境へとコピーできるようになる。
+ステージング環境の記事を、コピー&ペーストで本番環境に移動しているような場合に活用可能。
+
+その他、以下のおまけ付き
+- 記事内でよく利用するHTMLタグをテンプレートとして右カラムに常時設置する機能
+- サムネイル画像のURLを簡単に生成する機能
+
+注意：
+コマーシャルライセンスのMTでのみ利用可能。
+
+
+== INSTALLATION
+
+1. CopyToProductionディレクトリを、/cgi-bin/mt/plugin配下に設置
+2. /cgi-bin/mt/addons/Commercial.pack/config.yaml を以下の通り修正
+
+  #26行目付近
+  #api_post_save.entry: $Commercial::CustomFields::XMLRPCServer::APIPostSave_entry
+  api_post_save.entry: $CopyToProductionHelper::CopyToProductionHelper::XMLRPCServer::APIPostSave_entry
+
+
+== USEGE
+
+TODO
+
+Copyright (c) 2009 Takatomo Okitsu, released under the MIT license
